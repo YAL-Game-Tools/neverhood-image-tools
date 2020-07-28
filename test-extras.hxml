@@ -1,0 +1,4 @@
+#--resource src/Image1.nhi@image1
+#--resource src/Image26.nhi@image26
+#--resource src/Image38.nhi@image38
+#--resource test/Image/Image35.nhi@test
