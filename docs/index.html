@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Neverhood Image Tools</title>
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div id="nh-about">
+		<p>
+			Hello!
+		</p><p>
+			This is a small tool that lets you work with image files from
+			<a href="https://en.wikipedia.org/wiki/The_Neverhood">The Neverhood</a>.
+		</p><p>
+			You'll need to extract your images from the BLB package first.
+		</p><p>
+			Here's what it can do, depending on file you give it:
+		</p><ul><li>
+			NHI: Converts a Neverhood image file to PNG.<br/>
+			Format 26 is best supported,
+			some formats require a valid palette,
+			some are compressed (?) and don't load correctly.
+		</li><li>
+			NHP: Loads a Neverhood palette file and uses it for subsequent image files
+			that do not have a built-in palette.<br>
+			Reloads the last loaded image with this palette, if any.
+		</li><li>
+			PNG/BMP: Converts a regular image to format-26 Neverhood image.<br/>
+			If your image has >256 colors, extra colors will be discarded using
+			a very poorly written algoirthm.
+		</li></ul><p>
+			Credits:
+		</p><ul><li>
+			Tool by <a href="https://yal.cc">YellowAfterlife</a>.
+		</li><li>
+			Written in <a href="https://haxe.org">Haxe</a>.
+		</li><li>
+			Vaguely based on "nhi2bmp" 0.1.2 by Max Ivanoff.
+		</li></ul>
+	</div>
+	<form id="nh-file-picker-form">
+		<input type="file" id="nh-file-picker" accept=".nhi,.nhp,.png,.bmp" multiple />
+		<a href="" id="blob-savior"></a>
+	</form>
+	<div id="nh-controls">
+		<input type="button" value="Clear" id="nh-clear" />
+	</div>
+	<div id="nh-container"></div>
+	<script src="script.js"></script>
+</body>
+</html>
